@@ -1,7 +1,7 @@
-# Core Pkgs
+# Core libraries
 import streamlit as st 
 
-# NLP Pkgs
+# NLP libraries
 import spacy_streamlit
 import spacy
 from spacy import displacy
