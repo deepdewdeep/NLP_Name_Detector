@@ -1,34 +1,34 @@
-# Core libraries
 import streamlit as st 
-import matplotlib.pyplot as plt  # Import Matplotlib
+import matplotlib.pyplot as plt
 import spacy_streamlit
 import spacy
 from spacy import displacy
 
 def main():
-    """A Streamlit NLP App with spaCy"""
-
     # Set page title and icon
     st.set_page_config(
         page_title="NLP App for Named Entity Recognition (NER)", 
         page_icon="🧠"
     )
 
-    # Set app title and description with custom style
+    # Display the app title
     st.title("Named Entity Recognition App")
 
+    # Load the English language model from spaCy
     nlp = spacy.load("en_core_web_sm")
 
-    # Get user input text
+    # Input Text Section
     st.subheader("Enter Text")
     raw_text = st.text_area("Input Text", "")
 
+    # Check if input text is empty
     if not raw_text.strip():
         st.warning("Please enter some text.")
         return
 
-    # Add a submit button with custom style
+    # Submit Button
     if st.button("Submit", key="submit_button"):
+        # Tokenization Section
         st.subheader("Tokenization")
         docx = nlp(raw_text)
         
@@ -49,7 +49,7 @@ def main():
         # Display the Matplotlib chart in Streamlit
         st.pyplot(plt)
 
-        # Named Entity Recognition (NER) Visualization
+        # Named Entity Recognition (NER) Visualization Section
         st.subheader("Named Entity Recognition (NER)")
         
         # Display NER entities using spaCy's displaCy with custom style
