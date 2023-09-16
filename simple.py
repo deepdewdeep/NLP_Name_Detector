@@ -4,8 +4,8 @@ import streamlit as st
 # NLP Pkgs
 import spacy_streamlit
 import spacy
-nlp = spacy.load("en_core_web_sm") #spacy.load("en_core_web_sm")
 
+nlp = spacy.load("en_core_web_sm") #spacy.load("en_core_web_sm")
 import os
 from PIL import Image
 
