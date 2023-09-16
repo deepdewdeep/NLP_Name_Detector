@@ -11,7 +11,7 @@ def main():
 
     # Set page title and icon
     st.set_page_config(
-        page_title="NLP App using SpaCy", 
+        page_title="NLP App with spaCy", 
         page_icon="✅"
     )
 

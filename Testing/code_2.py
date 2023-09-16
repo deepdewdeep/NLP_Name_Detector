@@ -29,21 +29,23 @@ def main():
         st.warning("Please enter some text.")
         return
 
-    # Perform actions based on user choice
-    action = st.selectbox("Select an action", ["Tokenization", "NER Visualization"])
+    # Add a submit button
+    if st.button("Submit"):
+        # Perform actions based on user choice
+        action = st.selectbox("Select an action", ["Tokenization", "NER Visualization"])
 
-    if action == "Tokenization":
-        st.subheader("Tokenization")
-        docx = nlp(raw_text)
-        spacy_streamlit.visualize_tokens(docx, attrs=['text','pos_','dep_','ent_type_'])
+        if action == "Tokenization":
+            st.subheader("Tokenization")
+            docx = nlp(raw_text)
+            spacy_streamlit.visualize_tokens(docx, attrs=['text','pos_','dep_','ent_type_'])
 
-    elif action == "NER Visualization":
-        st.subheader("Named Entity Recognition (NER)")
-        docx = nlp(raw_text)
-        
-        # Display NER entities using spaCy's displaCy
-        html = displacy.render(docx, style="ent")
-        st.write(html, unsafe_allow_html=True)
+        elif action == "NER Visualization":
+            st.subheader("Named Entity Recognition (NER)")
+            docx = nlp(raw_text)
+            
+            # Display NER entities using spaCy's displaCy
+            html = displacy.render(docx, style="ent")
+            st.write(html, unsafe_allow_html=True)
 
 if __name__ == '__main__':
     main()

@@ -1,3 +1,3 @@
 cd c:\python311\Scripts
 cd /d D:\work\Githubdeskwork\NLP_Name_Detector
-streamlit run code_1.py
+streamlit run code_2.py
