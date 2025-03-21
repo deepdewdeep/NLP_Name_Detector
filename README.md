@@ -13,7 +13,10 @@ This repository focuses on the following natural language processing (NLP) aspec
 
 ## Demo
 
-![alt text](image.png)
+<p align="center">
+  <img src="image.png" alt="alt text">
+</p>
+
 
 ## How to Install/Setup
 
